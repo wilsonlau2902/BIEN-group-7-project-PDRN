@@ -105,8 +105,11 @@
     <section class="differentiation-section">
         <div class="container">
             <h2 class="section-title">Why Algae Over Salmon?</h2>
-            <p style="text-align: center; font-size: 1.25rem; color: var(--text-light); max-width: 800px; margin: 0 auto 4rem;">
+            <p style="text-align: center; font-size: 1.25rem; color: var(--text-light); max-width: 800px; margin: 0 auto 2rem;">
                 Our algae-based PDRN isn't just sustainable—it's scientifically superior in every measurable way
+            </p>
+            <p class="swipe-instruction" style="text-align: center; font-size: 1rem; color: #86868b; margin-bottom: 2rem; display: none;">
+                👈 Swipe to compare 👉
             </p>
             <div class="comparison-grid">
                 <div class="comparison-card highlight">
@@ -174,6 +177,13 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Scroll dots indicator -->
+            <div class="scroll-dots">
+                <div class="scroll-dot active"></div>
+                <div class="scroll-dot"></div>
+            </div>
+            
             <div class="bottom-cta">
                 <p>The choice is clear. The future is algae.</p>
                 <a href="#contact" class="btn btn-primary">Experience the Difference</a>
@@ -343,5 +353,34 @@
     </footer>
 
     <script src="script.js"></script>
+    
+    <script>
+        // Scroll dots functionality for comparison cards
+        const comparisonGrid = document.querySelector('.comparison-grid');
+        const scrollDots = document.querySelectorAll('.scroll-dot');
+        const swipeInstruction = document.querySelector('.swipe-instruction');
+        
+        if (comparisonGrid && scrollDots.length > 0) {
+            // Show swipe instruction on mobile
+            if (window.innerWidth <= 768 && swipeInstruction) {
+                swipeInstruction.style.display = 'block';
+            }
+            
+            // Update scroll dots based on scroll position
+            comparisonGrid.addEventListener('scroll', () => {
+                const scrollPercentage = comparisonGrid.scrollLeft / (comparisonGrid.scrollWidth - comparisonGrid.clientWidth);
+                
+                scrollDots.forEach((dot, index) => {
+                    if (index === 0 && scrollPercentage < 0.5) {
+                        dot.classList.add('active');
+                    } else if (index === 1 && scrollPercentage >= 0.5) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            });
+        }
+    </script>
 </body>
 </html>

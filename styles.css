@@ -1352,6 +1352,17 @@ section {
     background-clip: text;
 }
 
+/* Hide scroll indicators on desktop */
+@media (min-width: 969px) {
+    .differentiation-section::after {
+        display: none;
+    }
+
+    .scroll-dots {
+        display: none;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 968px) {
     .container {
@@ -1609,6 +1620,36 @@ section {
     }
 
     /* Comparison Section Mobile - Horizontal Scroll */
+    .differentiation-section {
+        position: relative;
+    }
+
+    /* Animated scroll hint arrow */
+    .differentiation-section::after {
+        content: '→';
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2.5rem;
+        color: rgba(67, 233, 123, 0.6);
+        animation: slideHint 2s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 10;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes slideHint {
+        0%, 100% {
+            transform: translateY(-50%) translateX(0);
+            opacity: 0.6;
+        }
+        50% {
+            transform: translateY(-50%) translateX(10px);
+            opacity: 1;
+        }
+    }
+
     .comparison-grid {
         display: flex;
         overflow-x: auto;
@@ -1617,6 +1658,7 @@ section {
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         padding-bottom: 1rem;
+        padding-right: 10vw; /* Show peek of next card */
     }
 
     .comparison-grid::-webkit-scrollbar {
@@ -1639,6 +1681,28 @@ section {
         flex-shrink: 0;
         scroll-snap-align: center;
         padding: 2.5rem 2rem;
+    }
+
+    /* Scroll dots indicator */
+    .scroll-dots {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 1.5rem;
+    }
+
+    .scroll-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .scroll-dot.active {
+        width: 24px;
+        border-radius: 4px;
+        background: rgba(67, 233, 123, 0.8);
     }
 
     .comparison-card h3 {
@@ -1934,14 +1998,20 @@ section {
         padding: 60px 0;
     }
 
+    .differentiation-section::after {
+        font-size: 2rem;
+        right: 15px;
+    }
+
     .comparison-grid {
         gap: 1.25rem;
         margin-bottom: 3rem;
+        padding-right: 12vw; /* Show more peek on small mobile */
     }
 
     .comparison-card {
-        min-width: 90vw;
-        max-width: 90vw;
+        min-width: 88vw;
+        max-width: 88vw;
         padding: 2rem 1.5rem;
         border-radius: 20px;
     }
