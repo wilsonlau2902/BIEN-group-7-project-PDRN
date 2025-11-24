@@ -126,13 +126,15 @@ html {
 
 /* Hero Section - Apple Style with Algae Elements */
 .hero {
-    padding: 140px 0 120px;
+    padding: 0;
     background: linear-gradient(135deg, rgba(0, 36, 21, 0.7) 0%, rgba(0, 61, 46, 0.7) 50%, rgba(0, 36, 21, 0.7) 100%);
     position: relative;
     overflow: hidden;
-    min-height: 90vh;
+    min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .hero-bg-image {
@@ -223,6 +225,7 @@ html {
     z-index: 2;
     text-align: center;
     margin: 0 auto;
+    padding: 40px 20px;
 }
 
 .hero-tagline {
