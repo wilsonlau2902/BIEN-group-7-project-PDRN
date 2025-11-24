@@ -169,6 +169,77 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Create floating algae particles
+function createAlgaeParticles() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+    
+    const particleCount = 15;
+    
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'algae-particle';
+        
+        // Random size between 3px and 15px
+        const size = Math.random() * 12 + 3;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        
+        // Random horizontal position
+        particle.style.left = `${Math.random() * 100}%`;
+        
+        // Random animation duration between 10s and 25s
+        const duration = Math.random() * 15 + 10;
+        particle.style.animationDuration = `${duration}s`;
+        
+        // Random animation delay
+        particle.style.animationDelay = `${Math.random() * 5}s`;
+        
+        hero.appendChild(particle);
+    }
+}
+
+// Create organic shapes
+function createOrganicShapes() {
+    const sections = document.querySelectorAll('.innovation, .about');
+    
+    sections.forEach((section, index) => {
+        const shapeCount = 2;
+        
+        for (let i = 0; i < shapeCount; i++) {
+            const shape = document.createElement('div');
+            shape.className = 'organic-shape';
+            
+            // Random size between 200px and 400px
+            const size = Math.random() * 200 + 200;
+            shape.style.width = `${size}px`;
+            shape.style.height = `${size}px`;
+            
+            // Random position
+            if (i === 0) {
+                shape.style.top = `${Math.random() * 30}%`;
+                shape.style.left = `${Math.random() * 20}%`;
+            } else {
+                shape.style.bottom = `${Math.random() * 30}%`;
+                shape.style.right = `${Math.random() * 20}%`;
+            }
+            
+            // Random animation delay
+            shape.style.animationDelay = `${Math.random() * 5}s`;
+            
+            section.style.position = 'relative';
+            section.style.overflow = 'hidden';
+            section.appendChild(shape);
+        }
+    });
+}
+
+// Initialize visual effects
+document.addEventListener('DOMContentLoaded', () => {
+    createAlgaeParticles();
+    createOrganicShapes();
+});
+
 // Stats Counter Animation
 function animateStats() {
     const stats = document.querySelectorAll('.stat-number');

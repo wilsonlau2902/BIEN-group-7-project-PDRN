@@ -124,10 +124,10 @@ html {
     width: 100%;
 }
 
-/* Hero Section - Apple Style */
+/* Hero Section - Apple Style with Algae Elements */
 .hero {
     padding: 140px 0 120px;
-    background: var(--dark-bg);
+    background: linear-gradient(135deg, #001a14 0%, #002e24 50%, #001a14 100%);
     position: relative;
     overflow: hidden;
     min-height: 90vh;
@@ -142,7 +142,7 @@ html {
     right: -10%;
     width: 1200px;
     height: 1200px;
-    background: radial-gradient(circle, rgba(102, 126, 234, 0.15) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(67, 233, 123, 0.15) 0%, rgba(56, 249, 215, 0.1) 40%, transparent 70%);
     border-radius: 50%;
     animation: float 20s ease-in-out infinite;
 }
@@ -154,14 +154,42 @@ html {
     left: -10%;
     width: 900px;
     height: 900px;
-    background: radial-gradient(circle, rgba(191, 90, 242, 0.12) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(0, 242, 254, 0.12) 0%, rgba(75, 172, 254, 0.08) 40%, transparent 70%);
     border-radius: 50%;
     animation: float 25s ease-in-out infinite reverse;
 }
 
+/* Algae particles floating effect */
+.hero .algae-particle {
+    position: absolute;
+    background: radial-gradient(circle, rgba(67, 233, 123, 0.6) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: floatParticle linear infinite;
+    pointer-events: none;
+}
+
 @keyframes float {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(50px, 50px) scale(1.05); }
+    0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    25% { transform: translate(30px, -30px) scale(1.05) rotate(90deg); }
+    50% { transform: translate(50px, 50px) scale(1.1) rotate(180deg); }
+    75% { transform: translate(-30px, 30px) scale(1.05) rotate(270deg); }
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(100vh) translateX(0) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100px) translateX(50px) scale(1);
+        opacity: 0;
+    }
 }
 
 .hero-content {
@@ -267,9 +295,24 @@ section {
     display: none;
 }
 
-/* Innovation Section - Apple Glass Morphism */
+/* Innovation Section - Apple Glass Morphism with Organic Pattern */
 .innovation {
     background: linear-gradient(180deg, var(--light-bg) 0%, var(--white) 100%);
+    position: relative;
+}
+
+.innovation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(67, 233, 123, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 242, 254, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(75, 172, 254, 0.03) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .innovation-grid {
@@ -289,13 +332,37 @@ section {
     transition: all 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
     border: 1px solid rgba(0, 0, 0, 0.06);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden;
+}
+
+.innovation-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(67, 233, 123, 0.05) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.innovation-card:hover::before {
+    opacity: 1;
+    animation: rotateGlow 10s linear infinite;
 }
 
 .innovation-card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-    border-color: rgba(102, 126, 234, 0.3);
+    box-shadow: 0 20px 40px rgba(67, 233, 123, 0.15);
+    border-color: rgba(67, 233, 123, 0.3);
     background: rgba(255, 255, 255, 0.95);
+}
+
+@keyframes rotateGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .innovation-card .icon {
@@ -318,15 +385,47 @@ section {
     font-size: 1.05rem;
 }
 
-/* Benefits Section - Dark Theme */
+/* Benefits Section - Dark Theme with Organic Background */
 .benefits {
-    background: var(--dark-bg);
+    background: linear-gradient(135deg, #000000 0%, #001a14 50%, #000000 100%);
     color: var(--white);
     position: relative;
+    overflow: hidden;
+}
+
+.benefits::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(67, 233, 123, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse 8s ease-in-out infinite;
+}
+
+.benefits::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 242, 254, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse 10s ease-in-out infinite reverse;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.2); opacity: 0.8; }
 }
 
 .benefits .section-title {
     color: var(--white);
+    position: relative;
+    z-index: 1;
 }
 
 .benefits-container {
@@ -343,13 +442,32 @@ section {
     border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.benefit-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(67, 233, 123, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.benefit-item:hover::before {
+    opacity: 1;
 }
 
 .benefit-item:hover {
     transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(102, 126, 234, 0.4);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(67, 233, 123, 0.4);
+    box-shadow: 0 20px 40px rgba(67, 233, 123, 0.2);
 }
 
 .benefit-number {
@@ -381,10 +499,212 @@ section {
     font-size: 1.05rem;
 }
 
-/* About Section - Light & Spacious */
-.about {
-    background: var(--white);
+/* Visual Feature Section with Algae Visualization */
+.visual-feature {
+    background: linear-gradient(135deg, #001a14 0%, #002e24 100%);
     padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.feature-visual {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.algae-circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(67, 233, 123, 0.2) 0%, rgba(56, 249, 215, 0.1) 50%, transparent 100%);
+    position: relative;
+    animation: rotateCircle 30s linear infinite;
+    border: 2px solid rgba(67, 233, 123, 0.3);
+    box-shadow: 
+        0 0 40px rgba(67, 233, 123, 0.3),
+        inset 0 0 40px rgba(67, 233, 123, 0.2);
+}
+
+.algae-cell {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, rgba(67, 233, 123, 0.8) 0%, rgba(56, 249, 215, 0.4) 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(67, 233, 123, 0.6);
+    animation: floatCell 8s ease-in-out infinite;
+}
+
+.algae-cell:nth-child(1) {
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 0s;
+}
+
+.algae-cell:nth-child(2) {
+    top: 50%;
+    left: 20%;
+    transform: translateY(-50%);
+    animation-delay: 2.67s;
+}
+
+.algae-cell:nth-child(3) {
+    top: 50%;
+    right: 20%;
+    transform: translateY(-50%);
+    animation-delay: 5.34s;
+}
+
+.dna-strand {
+    position: absolute;
+    width: 2px;
+    height: 400px;
+    background: linear-gradient(to bottom, 
+        rgba(75, 172, 254, 0.6) 0%, 
+        rgba(67, 233, 123, 0.6) 50%, 
+        rgba(75, 172, 254, 0.6) 100%);
+    left: 50%;
+    transform: translateX(-50%);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.dna-strand::before,
+.dna-strand::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(75, 172, 254, 0.8);
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(75, 172, 254, 0.8);
+}
+
+.dna-strand::before {
+    top: 0;
+    animation: moveDown 3s ease-in-out infinite;
+}
+
+.dna-strand::after {
+    bottom: 0;
+    animation: moveUp 3s ease-in-out infinite;
+}
+
+@keyframes rotateCircle {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes floatCell {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(10px, -10px) scale(1.1); }
+}
+
+@keyframes moveDown {
+    0%, 100% { top: 0; }
+    50% { top: 50%; }
+}
+
+@keyframes moveUp {
+    0%, 100% { bottom: 0; }
+    50% { bottom: 50%; }
+}
+
+.feature-text {
+    color: var(--white);
+}
+
+.feature-text h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.feature-text p {
+    font-size: 1.25rem;
+    color: #a1a1a6;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+}
+
+.feature-stats {
+    display: flex;
+    gap: 3rem;
+}
+
+.mini-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.mini-number {
+    font-size: 2.5rem;
+    font-weight: 600;
+    background: var(--gradient-4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.mini-label {
+    font-size: 0.875rem;
+    color: #a1a1a6;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 968px) {
+    .feature-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .feature-visual {
+        height: 400px;
+    }
+    
+    .feature-text h2 {
+        font-size: 2rem;
+    }
+    
+    .feature-stats {
+        gap: 2rem;
+    }
+}
+
+/* About Section - Light & Spacious with Subtle Pattern */
+.about {
+    background: linear-gradient(180deg, var(--white) 0%, #f0faf7 50%, var(--white) 100%);
+    padding: 120px 0;
+    position: relative;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 15% 30%, rgba(67, 233, 123, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 85% 70%, rgba(75, 172, 254, 0.04) 0%, transparent 40%);
+    pointer-events: none;
 }
 
 .about-content {
@@ -417,8 +737,22 @@ section {
     gap: 3rem;
     margin-top: 5rem;
     padding: 3rem;
-    background: var(--light-bg);
+    background: linear-gradient(135deg, rgba(67, 233, 123, 0.05) 0%, rgba(75, 172, 254, 0.05) 100%);
     border-radius: 28px;
+    border: 1px solid rgba(67, 233, 123, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.stats::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(67, 233, 123, 0.03) 0%, transparent 70%);
+    animation: rotateGlow 20s linear infinite;
 }
 
 .stat {
@@ -688,9 +1022,38 @@ section {
     box-shadow: 0 2px 8px rgba(0, 113, 227, 0.3);
 }
 
+/* Algae-inspired organic shapes */
+.organic-shape {
+    position: absolute;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    background: radial-gradient(circle, rgba(67, 233, 123, 0.1) 0%, transparent 70%);
+    animation: morphShape 15s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes morphShape {
+    0%, 100% {
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        transform: rotate(0deg) scale(1);
+    }
+    25% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: rotate(90deg) scale(1.1);
+    }
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+        transform: rotate(180deg) scale(0.9);
+    }
+    75% {
+        border-radius: 70% 30% 40% 60% / 40% 70% 50% 30%;
+        transform: rotate(270deg) scale(1.05);
+    }
+}
+
 /* Additional Premium Effects */
 .container {
     max-width: 1400px;
+    position: relative;
 }
 
 ::selection {
