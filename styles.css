@@ -1442,6 +1442,11 @@ section {
         padding: 0 20px;
     }
 
+    /* Hide entire navigation bar on mobile */
+    .navbar {
+        display: none;
+    }
+
     .navbar .container {
         flex-direction: column;
         align-items: flex-start;
@@ -1454,7 +1459,7 @@ section {
     }
 
     .nav-menu {
-        display: none; /* Hide navigation menu on mobile */
+        display: none;
     }
 
     .nav-link {
@@ -1769,6 +1774,11 @@ section {
         padding: 0 16px;
     }
 
+    /* Keep navbar hidden on small mobile */
+    .navbar {
+        display: none;
+    }
+
     .navbar .container {
         padding: 0.875rem 16px;
     }
@@ -1782,7 +1792,7 @@ section {
     }
 
     .nav-menu {
-        display: none; /* Keep hidden on small mobile */
+        display: none;
     }
 
     .nav-link {
