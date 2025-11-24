@@ -127,7 +127,7 @@ html {
 /* Hero Section - Apple Style with Algae Elements */
 .hero {
     padding: 140px 0 120px;
-    background: linear-gradient(135deg, #001a14 0%, #002e24 50%, #001a14 100%);
+    background: linear-gradient(135deg, #002415 0%, #003d2e 50%, #002415 100%);
     position: relative;
     overflow: hidden;
     min-height: 90vh;
@@ -141,11 +141,11 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('https://www.shutterstock.com/image-photo/algae-on-ocean-floor-natural-600nw-2503554341.jpg');
+    background-image: url('https://ej9px6kfdm3.exactdn.com/wp-content/uploads/2024/03/algae-2484265_1280.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.15;
-    filter: brightness(0.7);
+    opacity: 0.2;
+    filter: brightness(1.2) saturate(1.3);
     z-index: 0;
 }
 
@@ -430,25 +430,29 @@ section {
 .benefits::before {
     content: '';
     position: absolute;
-    top: -20%;
-    right: -10%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(67, 233, 123, 0.08) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: pulse 8s ease-in-out infinite;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://www.shutterstock.com/image-photo/algae-on-ocean-floor-natural-600nw-2503554341.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    filter: brightness(1.5) saturate(1.5) hue-rotate(10deg);
+    z-index: 0;
 }
 
 .benefits::after {
     content: '';
     position: absolute;
-    bottom: -20%;
-    left: -10%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(0, 242, 254, 0.08) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: pulse 10s ease-in-out infinite reverse;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 30% 40%, rgba(67, 233, 123, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(0, 242, 254, 0.1) 0%, transparent 50%);
+    z-index: 0;
 }
 
 @keyframes pulse {
@@ -548,10 +552,27 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
-        radial-gradient(circle at 20% 30%, rgba(67, 233, 123, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(0, 242, 254, 0.05) 0%, transparent 50%);
+    background-image: url('https://www.news-medical.net/image-handler/picture/2021/10/shutterstock_1042159933.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.06;
+    filter: brightness(1.3) saturate(1.4);
     pointer-events: none;
+    z-index: 0;
+}
+
+.three-r-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(67, 233, 123, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(0, 242, 254, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .three-r-grid {
@@ -809,6 +830,21 @@ section {
     padding: 120px 0;
     position: relative;
     overflow: hidden;
+}
+
+.visual-feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://ej9px6kfdm3.exactdn.com/wp-content/uploads/2024/03/algae-2484265_1280.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    opacity: 0.08;
+    filter: brightness(1.2) saturate(1.3);
+    z-index: 0;
 }
 
 .feature-content {
