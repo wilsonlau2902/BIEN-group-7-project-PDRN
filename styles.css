@@ -127,7 +127,7 @@ html {
 /* Hero Section - Apple Style with Algae Elements */
 .hero {
     padding: 140px 0 120px;
-    background: linear-gradient(135deg, #002415 0%, #003d2e 50%, #002415 100%);
+    background: linear-gradient(135deg, rgba(0, 36, 21, 0.7) 0%, rgba(0, 61, 46, 0.7) 50%, rgba(0, 36, 21, 0.7) 100%);
     position: relative;
     overflow: hidden;
     min-height: 90vh;
@@ -141,12 +141,23 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('https://ej9px6kfdm3.exactdn.com/wp-content/uploads/2024/03/algae-2484265_1280.jpg');
+    background-image: url('images/algae-underwater.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.2;
-    filter: brightness(1.2) saturate(1.3);
+    opacity: 0.85;
+    filter: brightness(1.1) saturate(1.2);
     z-index: 0;
+}
+
+.hero-bg-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0, 36, 21, 0.4) 0%, rgba(0, 61, 46, 0.5) 50%, rgba(0, 36, 21, 0.6) 100%);
+    z-index: 1;
 }
 
 .hero::before {
@@ -209,9 +220,19 @@ html {
 .hero-content {
     max-width: 980px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     text-align: center;
     margin: 0 auto;
+}
+
+.hero-tagline {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: rgba(67, 233, 123, 0.95);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .hero-title {
@@ -221,28 +242,32 @@ html {
     line-height: 1.08;
     color: var(--white);
     letter-spacing: -0.015em;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
     font-size: 2rem;
-    background: var(--gradient-1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--white);
     font-weight: 600;
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero-description {
     font-size: 1.25rem;
-    color: #a1a1a6;
+    color: rgba(255, 255, 255, 0.95);
     margin-bottom: 2.5rem;
     line-height: 1.6;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     font-weight: 400;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .hero-buttons {
@@ -1430,6 +1455,11 @@ section {
         font-size: 1.35rem;
     }
 
+    .hero-tagline {
+        font-size: 0.9rem;
+        margin-bottom: 1.25rem;
+    }
+
     .hero-description {
         font-size: 1.05rem;
         max-width: 500px;
@@ -1722,6 +1752,11 @@ section {
     .hero-subtitle {
         font-size: 1.15rem;
         margin-bottom: 1.25rem;
+    }
+
+    .hero-tagline {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
     }
 
     .hero-description {
