@@ -1305,20 +1305,694 @@ section {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 968px) {
+    .container {
+        padding: 0 24px;
+    }
+
+    .navbar .container {
+        padding: 0.75rem 24px;
+    }
+
+    .nav-brand h1 {
+        font-size: 1.3rem;
+    }
+
+    .nav-brand .tagline {
+        font-size: 0.6rem;
+    }
+
     .nav-menu {
+        gap: 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+    }
+
+    .hero {
+        padding: 120px 0 80px;
+        min-height: 70vh;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+        line-height: 1.1;
+    }
+
+    .hero-subtitle {
+        font-size: 1.6rem;
+    }
+
+    .hero-description {
+        font-size: 1.15rem;
+        max-width: 600px;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    section {
+        padding: 80px 0;
+    }
+
+    .innovation-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.25rem;
+    }
+
+    .innovation-card {
+        padding: 2.5rem 1.75rem;
+    }
+
+    .feature-content {
+        gap: 4rem;
+    }
+
+    .contact-content {
+        gap: 3rem;
+    }
+
+    .contact-form {
+        padding: 2.5rem;
+    }
+
+    .stats {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 2rem;
+        padding: 2.5rem;
+    }
+
+    .stat-number {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 1rem 20px;
+    }
+
+    .nav-brand {
+        width: 100%;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.75rem;
+    }
+
+    .hero {
+        padding: 100px 0 60px;
+        min-height: 60vh;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+        line-height: 1.15;
+    }
+
+    .hero-subtitle {
+        font-size: 1.35rem;
+    }
+
+    .hero-description {
+        font-size: 1.05rem;
+        max-width: 500px;
+        margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
         flex-direction: column;
         gap: 1rem;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        padding: 1.5rem;
-        box-shadow: var(--shadow);
-        display: none;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 14px 24px;
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    /* Innovation Section Mobile */
+    .innovation-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .innovation-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .innovation-card .icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .innovation-card h3 {
+        font-size: 1.35rem;
+    }
+
+    .innovation-card p {
+        font-size: 1rem;
+    }
+
+    /* 3R Section Mobile */
+    .three-r-section {
+        padding: 80px 0;
+    }
+
+    .three-r-grid {
+        gap: 1.5rem;
+    }
+
+    .r-card {
+        padding: 2rem;
+    }
+
+    .r-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .r-icon {
+        font-size: 2.5rem;
+    }
+
+    .r-header h3 {
+        font-size: 1.5rem;
+    }
+
+    .r-content h4 {
+        font-size: 0.95rem;
+    }
+
+    .r-content p {
+        font-size: 1rem;
+    }
+
+    /* Benefits Section Mobile */
+    .benefits-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .benefit-item {
+        padding: 2rem 1.5rem;
+    }
+
+    .benefit-item h3 {
+        font-size: 1.35rem;
+    }
+
+    .benefit-item p {
+        font-size: 1rem;
+    }
+
+    /* Comparison Section Mobile */
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .comparison-card {
+        padding: 2.5rem 2rem;
+    }
+
+    .comparison-card h3 {
+        font-size: 1.65rem;
+    }
+
+    .benefit-group h4 {
+        font-size: 1.15rem;
+    }
+
+    .benefit-group li {
+        font-size: 1rem;
+        padding: 0.6rem 0 0.6rem 1.75rem;
+    }
+
+    .bottom-cta p {
+        font-size: 1.5rem;
+    }
+
+    /* Visual Feature Mobile */
+    .feature-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .feature-visual {
+        height: 350px;
+        order: -1;
+    }
+
+    .algae-circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .algae-cell {
+        width: 40px;
+        height: 40px;
+    }
+
+    .dna-strand {
+        height: 300px;
+    }
+
+    .feature-text h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .feature-text p {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .feature-stats {
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .mini-number {
+        font-size: 2rem;
+    }
+
+    /* About Section Mobile */
+    .about {
+        padding: 80px 0;
+    }
+
+    .about-text h3 {
+        font-size: 2rem;
+    }
+
+    .about-text p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem;
+        margin-top: 3rem;
+    }
+
+    .stat-number {
+        font-size: 3rem;
+    }
+
+    .stat-label {
+        font-size: 0.95rem;
+    }
+
+    /* Contact Section Mobile */
+    .contact {
+        padding: 80px 0;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .contact-info h3 {
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    .contact-info > p {
+        font-size: 1.05rem;
+        text-align: center;
+    }
+
+    .contact-item {
+        text-align: center;
+    }
+
+    .contact-form {
+        padding: 2rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.95rem;
+    }
+
+    /* Footer Mobile */
+    .footer {
+        padding: 2.5rem 0;
+    }
+
+    .footer p {
+        font-size: 0.8rem;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .navbar .container {
+        padding: 0.875rem 16px;
+    }
+
+    .nav-brand h1 {
+        font-size: 1.2rem;
+    }
+
+    .nav-brand .tagline {
+        font-size: 0.55rem;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .nav-link {
+        font-size: 0.75rem;
+        padding: 0.25rem 0;
+    }
+
+    .hero {
+        padding: 90px 0 50px;
+        min-height: 55vh;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.15rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+        max-width: 100%;
+        margin-bottom: 1.75rem;
+    }
+
+    .hero-buttons {
+        gap: 0.875rem;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+
+    section {
+        padding: 50px 0;
+    }
+
+    .section-title {
+        font-size: 1.65rem;
+        line-height: 1.2;
+    }
+
+    /* Innovation Section Small Mobile */
+    .innovation {
+        padding: 50px 0;
+    }
+
+    .innovation-grid {
+        margin-top: 2.5rem;
+    }
+
+    .innovation-card {
+        padding: 1.75rem 1.25rem;
+        border-radius: 20px;
+    }
+
+    .innovation-card .icon {
+        font-size: 2.5rem;
+    }
+
+    .innovation-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .innovation-card p {
+        font-size: 0.95rem;
+    }
+
+    /* 3R Section Small Mobile */
+    .three-r-section {
+        padding: 60px 0;
+    }
+
+    .three-r-grid {
+        gap: 1.25rem;
+    }
+
+    .r-card {
+        padding: 1.75rem 1.25rem;
+        border-radius: 20px;
+    }
+
+    .r-header {
+        margin-bottom: 1.25rem;
+        padding-bottom: 1.25rem;
+    }
+
+    .r-icon {
+        font-size: 2.25rem;
+    }
+
+    .r-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .r-content h4 {
+        font-size: 0.875rem;
+        margin-top: 1.25rem;
+    }
+
+    .r-content p {
+        font-size: 0.95rem;
+    }
+
+    /* Comparison Section Small Mobile */
+    .differentiation-section {
+        padding: 60px 0;
+    }
+
+    .comparison-grid {
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .comparison-card {
+        padding: 2rem 1.5rem;
+        border-radius: 20px;
+    }
+
+    .card-badge {
+        font-size: 0.75rem;
+        padding: 6px 18px;
+    }
+
+    .comparison-icon {
+        font-size: 3rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .comparison-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+    }
+
+    .benefits-list {
+        gap: 1.5rem;
+    }
+
+    .benefit-group h4 {
+        font-size: 1.05rem;
+        margin-bottom: 0.875rem;
+    }
+
+    .benefit-group li {
+        font-size: 0.925rem;
+        padding: 0.5rem 0 0.5rem 1.5rem;
+        line-height: 1.55;
+    }
+
+    .bottom-cta {
+        margin-top: 3rem;
+        padding-top: 2.5rem;
+    }
+
+    .bottom-cta p {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Visual Feature Small Mobile */
+    .visual-feature {
+        padding: 60px 0;
+    }
+
+    .feature-visual {
+        height: 300px;
+    }
+
+    .algae-circle {
+        width: 180px;
+        height: 180px;
+    }
+
+    .algae-cell {
+        width: 35px;
+        height: 35px;
+    }
+
+    .dna-strand {
+        height: 250px;
+    }
+
+    .feature-text h2 {
+        font-size: 1.65rem;
+    }
+
+    .feature-text p {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .feature-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    .mini-stat {
+        align-items: center;
+    }
+
+    .mini-number {
+        font-size: 2.25rem;
+    }
+
+    .mini-label {
+        font-size: 0.8rem;
+    }
+
+    /* About Section Small Mobile */
+    .about {
+        padding: 60px 0;
+    }
+
+    .about-text h3 {
+        font-size: 1.65rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .stats {
+        padding: 1.75rem;
+        margin-top: 2.5rem;
+        border-radius: 20px;
+    }
+
+    .stat-number {
+        font-size: 2.75rem;
+    }
+
+    .stat-label {
+        font-size: 0.875rem;
+    }
+
+    /* Contact Section Small Mobile */
+    .contact {
+        padding: 60px 0;
+    }
+
+    .contact-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .contact-info > p {
+        font-size: 1rem;
+    }
+
+    .contact-form {
+        padding: 1.75rem 1.5rem;
+        border-radius: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px 14px;
+        font-size: 0.9rem;
+        border-radius: 10px;
+    }
+
+    /* Footer Small Mobile */
+    .footer {
+        padding: 2rem 0;
+    }
+
+    .footer p {
+        font-size: 0.75rem;
+    }
+}
+
+/* Landscape Mobile Optimization */
+@media (max-width: 968px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 100px 0 60px;
     }
 
     .hero-title {
@@ -1326,66 +2000,35 @@ section {
     }
 
     .hero-subtitle {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
-    .hero-description {
-        font-size: 1.1rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .btn {
-        width: 100%;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .innovation-grid,
-    .benefits-container {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-content {
-        grid-template-columns: 1fr;
-    }
-
-    .stats {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    .feature-visual {
+        height: 280px;
     }
 }
 
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
-        line-height: 1.1;
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .btn {
+        padding: 14px 28px;
+        font-size: 1rem;
     }
 
-    .hero-subtitle {
-        font-size: 1.25rem;
+    .nav-link {
+        padding: 0.5rem 0;
+        font-size: 0.875rem;
     }
 
-    .section-title {
-        font-size: 1.75rem;
+    .innovation-card:hover,
+    .benefit-item:hover,
+    .r-card:hover,
+    .comparison-card:hover {
+        transform: none;
     }
 
-    .innovation-card,
-    .benefit-item {
-        padding: 2rem 1.5rem;
-    }
-
-    .about-text h3 {
-        font-size: 1.75rem;
-    }
-
-    .about-text p {
-        font-size: 1.05rem;
+    .innovation-card:active {
+        transform: scale(0.98);
     }
 }
 
