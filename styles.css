@@ -1444,7 +1444,11 @@ section {
 
     /* Hide entire navigation bar on mobile */
     .navbar {
-        display: none;
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
     }
 
     .navbar .container {
@@ -1478,8 +1482,10 @@ section {
     }
 
     .hero {
-        padding: 100px 0 60px;
-        min-height: 60vh;
+        padding: 60px 0 60px;
+        padding-top: 60px !important;
+        min-height: 100vh;
+        margin-top: 0 !important;
     }
 
     .hero-title {
@@ -1776,7 +1782,11 @@ section {
 
     /* Keep navbar hidden on small mobile */
     .navbar {
-        display: none;
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
     }
 
     .navbar .container {
@@ -1811,8 +1821,10 @@ section {
     }
 
     .hero {
-        padding: 90px 0 50px;
-        min-height: 55vh;
+        padding: 60px 0 50px;
+        padding-top: 60px !important;
+        min-height: 100vh;
+        margin-top: 0 !important;
     }
 
     .hero-title {
