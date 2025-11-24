@@ -141,7 +141,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('images/algae-underwater.jpg');
+    background-image: url('algae-on-ocean-floor-natural-600nw-2503554341.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.85;
@@ -226,13 +226,14 @@ html {
 }
 
 .hero-tagline {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 500;
     color: rgba(67, 233, 123, 0.95);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    line-height: 1.5;
 }
 
 .hero-title {
@@ -243,6 +244,7 @@ html {
     color: var(--white);
     letter-spacing: -0.015em;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    margin-top: 0;
 }
 
 .hero-subtitle {
