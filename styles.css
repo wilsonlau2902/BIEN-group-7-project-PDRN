@@ -1493,19 +1493,26 @@ section {
     }
 
     .hero {
-        padding: 60px 0 60px;
-        padding-top: 60px !important;
-        min-height: 100vh;
+        padding: 0 !important;
+        min-height: 100vh !important;
+        height: 100vh !important;
         margin-top: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .hero-content {
+        padding: 40px 20px;
     }
 
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
         line-height: 1.15;
     }
 
     .hero-subtitle {
-        font-size: 1.35rem;
+        font-size: 1.5rem;
     }
 
     .hero-tagline {
@@ -1885,30 +1892,37 @@ section {
     }
 
     .hero {
-        padding: 60px 0 50px;
-        padding-top: 60px !important;
-        min-height: 100vh;
+        padding: 0 !important;
+        min-height: 100vh !important;
+        height: 100vh !important;
         margin-top: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .hero-content {
+        padding: 30px 16px;
     }
 
     .hero-title {
-        font-size: 1.75rem;
+        font-size: 2rem;
         line-height: 1.2;
         margin-bottom: 0.75rem;
     }
 
     .hero-subtitle {
-        font-size: 1.15rem;
+        font-size: 1.3rem;
         margin-bottom: 1.25rem;
     }
 
     .hero-tagline {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
         margin-bottom: 1rem;
     }
 
     .hero-description {
-        font-size: 0.95rem;
+        font-size: 1rem;
         max-width: 100%;
         margin-bottom: 1.75rem;
     }
