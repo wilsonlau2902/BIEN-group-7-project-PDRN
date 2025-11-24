@@ -1331,6 +1331,27 @@ section {
     font-weight: 400;
 }
 
+/* Tagline Separator Section */
+.tagline-separator {
+    background: linear-gradient(180deg, var(--light-bg) 0%, var(--white) 100%);
+    padding: 80px 0;
+    display: none; /* Hidden on desktop */
+}
+
+.separator-tagline {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 /* Responsive Design */
 @media (max-width: 968px) {
     .container {
@@ -1433,14 +1454,22 @@ section {
     }
 
     .nav-menu {
-        flex-wrap: wrap;
-        width: 100%;
-        justify-content: flex-start;
-        gap: 1rem;
+        display: none; /* Hide navigation menu on mobile */
     }
 
     .nav-link {
         font-size: 0.75rem;
+    }
+
+    /* Show tagline separator on mobile */
+    .tagline-separator {
+        display: block;
+        padding: 60px 0;
+    }
+
+    .separator-tagline {
+        font-size: 1.25rem;
+        padding: 0 20px;
     }
 
     .hero {
@@ -1568,13 +1597,36 @@ section {
         font-size: 1rem;
     }
 
-    /* Comparison Section Mobile */
+    /* Comparison Section Mobile - Horizontal Scroll */
     .comparison-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        display: flex;
+        overflow-x: auto;
+        overflow-y: visible;
+        gap: 1.5rem;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 1rem;
+    }
+
+    .comparison-grid::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .comparison-grid::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+    }
+
+    .comparison-grid::-webkit-scrollbar-thumb {
+        background: rgba(67, 233, 123, 0.5);
+        border-radius: 4px;
     }
 
     .comparison-card {
+        min-width: 85vw;
+        max-width: 85vw;
+        flex-shrink: 0;
+        scroll-snap-align: center;
         padding: 2.5rem 2rem;
     }
 
@@ -1730,14 +1782,22 @@ section {
     }
 
     .nav-menu {
-        flex-direction: column;
-        gap: 0.5rem;
-        width: 100%;
+        display: none; /* Keep hidden on small mobile */
     }
 
     .nav-link {
         font-size: 0.75rem;
         padding: 0.25rem 0;
+    }
+
+    /* Tagline separator on small mobile */
+    .tagline-separator {
+        padding: 50px 0;
+    }
+
+    .separator-tagline {
+        font-size: 1.1rem;
+        padding: 0 16px;
     }
 
     .hero {
@@ -1853,11 +1913,13 @@ section {
     }
 
     .comparison-grid {
-        gap: 1.5rem;
+        gap: 1.25rem;
         margin-bottom: 3rem;
     }
 
     .comparison-card {
+        min-width: 90vw;
+        max-width: 90vw;
         padding: 2rem 1.5rem;
         border-radius: 20px;
     }
