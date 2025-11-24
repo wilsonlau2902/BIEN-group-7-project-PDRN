@@ -135,6 +135,20 @@ html {
     align-items: center;
 }
 
+.hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://www.shutterstock.com/image-photo/algae-on-ocean-floor-natural-600nw-2503554341.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    filter: brightness(0.7);
+    z-index: 0;
+}
+
 .hero::before {
     content: '';
     position: absolute;
@@ -301,6 +315,25 @@ section {
     position: relative;
 }
 
+.innovation-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://www.news-medical.net/image-handler/picture/2021/10/shutterstock_1042159933.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.04;
+    filter: saturate(1.2);
+    z-index: 0;
+}
+
+.innovation .container {
+    position: relative;
+    z-index: 1;
+}
+
 .innovation::before {
     content: '';
     position: absolute;
@@ -313,6 +346,7 @@ section {
         radial-gradient(circle at 80% 80%, rgba(0, 242, 254, 0.03) 0%, transparent 50%),
         radial-gradient(circle at 40% 20%, rgba(75, 172, 254, 0.03) 0%, transparent 50%);
     pointer-events: none;
+    z-index: 0;
 }
 
 .innovation-grid {
@@ -792,17 +826,52 @@ section {
     justify-content: center;
 }
 
+.feature-image-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.feature-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zoomSlow 20s ease-in-out infinite alternate;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 26, 20, 0.4) 0%, rgba(0, 46, 36, 0.4) 100%);
+    mix-blend-mode: multiply;
+}
+
+@keyframes zoomSlow {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
 .algae-circle {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(67, 233, 123, 0.2) 0%, rgba(56, 249, 215, 0.1) 50%, transparent 100%);
-    position: relative;
+    background: radial-gradient(circle, rgba(67, 233, 123, 0.3) 0%, rgba(56, 249, 215, 0.15) 50%, transparent 100%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     animation: rotateCircle 30s linear infinite;
-    border: 2px solid rgba(67, 233, 123, 0.3);
+    border: 2px solid rgba(67, 233, 123, 0.4);
     box-shadow: 
-        0 0 40px rgba(67, 233, 123, 0.3),
-        inset 0 0 40px rgba(67, 233, 123, 0.2);
+        0 0 60px rgba(67, 233, 123, 0.4),
+        inset 0 0 60px rgba(67, 233, 123, 0.3);
+    z-index: 2;
 }
 
 .algae-cell {
@@ -845,8 +914,10 @@ section {
         rgba(67, 233, 123, 0.6) 50%, 
         rgba(75, 172, 254, 0.6) 100%);
     left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
     animation: pulse 3s ease-in-out infinite;
+    z-index: 3;
 }
 
 .dna-strand::before,
@@ -964,6 +1035,25 @@ section {
     position: relative;
 }
 
+.about-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://ej9px6kfdm3.exactdn.com/wp-content/uploads/2024/03/algae-2484265_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.03;
+    filter: brightness(1.1) saturate(0.8);
+    z-index: 0;
+}
+
+.about .container {
+    position: relative;
+    z-index: 1;
+}
+
 .about::before {
     content: '';
     position: absolute;
@@ -975,6 +1065,7 @@ section {
         radial-gradient(circle at 15% 30%, rgba(67, 233, 123, 0.04) 0%, transparent 40%),
         radial-gradient(circle at 85% 70%, rgba(75, 172, 254, 0.04) 0%, transparent 40%);
     pointer-events: none;
+    z-index: 0;
 }
 
 .about-content {
