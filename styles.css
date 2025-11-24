@@ -306,14 +306,17 @@ html {
 }
 
 .btn-secondary {
-    background: transparent;
+    background: var(--white);
     color: var(--primary-color);
-    border: 1px solid rgba(0, 113, 227, 0.5);
+    border: 1px solid var(--white);
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
 }
 
 .btn-secondary:hover {
-    background: rgba(0, 113, 227, 0.08);
-    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.9);
+    border-color: var(--white);
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.4);
 }
 
 /* Section Styles - Apple Inspired */
@@ -1661,11 +1664,11 @@ section {
         display: flex;
         overflow-x: auto;
         overflow-y: visible;
-        gap: 1.5rem;
+        gap: 1rem;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         padding-bottom: 1rem;
-        padding-right: 10vw; /* Show peek of next card */
+        padding-right: 5vw; /* Show more of next card */
     }
 
     .comparison-grid::-webkit-scrollbar {
@@ -1683,11 +1686,11 @@ section {
     }
 
     .comparison-card {
-        min-width: 85vw;
-        max-width: 85vw;
+        min-width: 75vw;
+        max-width: 75vw;
         flex-shrink: 0;
-        scroll-snap-align: center;
-        padding: 2.5rem 2rem;
+        scroll-snap-align: start;
+        padding: 2rem 1.5rem;
     }
 
     /* Scroll dots indicator */
